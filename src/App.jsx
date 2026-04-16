@@ -32,6 +32,7 @@ import {
   Cell,
 } from 'recharts';
 import Papa from 'papaparse';
+import * as XLSX from 'xlsx';
 import { Toaster, toast } from 'sonner';
 import './App.scss';
 import './components/ChangesView.scss';
@@ -976,23 +977,49 @@ function App() {
   const handleFileUpload = (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
+
+    const isExcel = file.name.endsWith('.xlsx') || file.name.endsWith('.xls');
     const reader = new FileReader();
+
     reader.onload = (loadEvent) => {
       try {
-        const csvText = loadEvent.target?.result;
-        const parsedData = parseCsv(csvText);
+        let parsedData;
+
+        if (isExcel) {
+          // Handle Excel files
+          const data = new Uint8Array(loadEvent.target?.result);
+          const workbook = XLSX.read(data, { type: 'array' });
+          const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+          
+          // Convert to CSV format
+          const csvText = XLSX.utils.sheet_to_csv(firstSheet);
+          parsedData = parseCsv(csvText);
+          
+          toast.success('Excel file uploaded successfully!');
+        } else {
+          // Handle CSV files
+          const csvText = loadEvent.target?.result;
+          parsedData = parseCsv(csvText);
+          toast.success('CSV file uploaded successfully!');
+        }
+
         setProducts(parsedData);
         setSearchQuery('');
         setStatusFilter('all');
         setPortfolioFilter('all');
-        toast.success('CSV file uploaded successfully!');
         event.target.value = '';
       } catch (error) {
-        toast.error('Error uploading CSV file. Please check the format and try again.');
+        console.error('Upload error:', error);
+        toast.error(`Error uploading file. Please check the format and try again. ${error.message}`);
         event.target.value = '';
       }
     };
-    reader.readAsText(file);
+
+    if (isExcel) {
+      reader.readAsArrayBuffer(file);
+    } else {
+      reader.readAsText(file);
+    }
   };
 
   return (
@@ -1048,9 +1075,9 @@ function App() {
             </button>
 
             <button type="button" className="upload-btn" onClick={() => fileInputRef.current?.click()}>
-              Upload CSV
+              Upload File
             </button>
-            <input ref={fileInputRef} type="file" accept=".csv" hidden onChange={handleFileUpload} />
+            <input ref={fileInputRef} type="file" accept=".csv,.xlsx,.xls" hidden onChange={handleFileUpload} />
           </div>
         </div>
       </header>
