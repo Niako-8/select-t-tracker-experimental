@@ -1,0 +1,67 @@
+,,,Avail. To be purchased on SAPC or MP listing or IBMC,,,,,,,,,,,,,
+W3 Facing No,,,,,,,,No,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,Leaders & Focals,,
+,Tenet: ,,Consumable,,,,,,Instrumented,,,,,Leaders & Focals,,
+,Owner (Function): ,,PM,PM,PM,Eng.,Eng.,Eng.,Eng.,CIO/Eng.,CIO/Eng.,CIO/Eng.,Eng.,,,
+,Priority Focus: ,Q1'26,Q4'25,Q1'26,Q1'26,Q1'26,April'26,Q4'25,Q1'26,Q1'26,Q1'26,2Q'26,1H'26,,,
+Portfolio,Select T Focus Product,"Sales kit ready for SKO1 w/ Select T use cases incl. differentiation, measurable ROI, etc.","eCommerce 
+enabled 
+G = ability to purchase online > 1 site IBM, AWS, etc.","Onboarding TTV <10min (from purchase to paid Aha)
+G = <10 min;
+Y = <1 hr;
+R = >1 hour","Onboarding
+Experience Quality
+G = simple
+Y = friction
+R = significant friction
+
+PRELIMINARY","Provision Time Product Instance
+G = <5 min
+Y = < 1 hour
+R = >1 hour
+
+PRELIMINARY","Fullfillment Time e2e workflow
+ G = <5 min
+Y = 5min - 1 day
+R = >1 day",Consumability Metrics Across Customer Journey,SaaS Metered Usage,Trial Journey CMTs deployed,Paid Journey CMTs deployed,Rated Usage*,Cross-product experience implemented (Solis Land enabled),Product Leader (owner),Design Focal,
+Data,watsonx Orchestrate,Green,Green,Red,Red,Green,Red,Green,Green,Green,Green,Red,Red,Suzanne Livingston,Steve Kim,
+,Bob,Green,Green,Pending GA,Pending GA,N/A,Amber,Pending GA,Green,Q2 '26,Q2 '26,Red,Red,Michael Kwok,Robert Uthe,
+,watsonx.gov,Green,Green,Amber,Amber,Amber,Amber,Green,Green,Q2 '26,Q2 '26,Red,Jun'26,Maryam Ashoori,Susanna Rodriguez de Tembleque,
+,Guardium Data Security Center,Green,Green,Amber,Amber,Amber,Red,Green,Green,Green,Green,Red,Mid Apr,Vishal Kamat,,
+,watsonx.data,Green,Green,Amber,Amber,Red,Red,Green,Green,Green,Green,Red,Apr 29,Shankar Ramaswamy,Susanna Rodriguez de Tembleque,
+,watsonx.data integration,Green,Green,Amber,Amber,no data,Red,Green,Green,Green,Green,Red,Jun'26,Scott Brokaw,Susanna Rodriguez de Tembleque,
+,Planning Analytics,Green,Green,Red,Red,Green,Red,Green,Green,Green,Green,Red,Green,Yuhong Yin,Susanna Rodriguez de Tembleque,
+Automation,Terraform,Green,Green,Green,Amber,Green$,Red,Red**,Amber*,Amber**,Amber**,Red,Red,Daniel Savage,Melina McClarty,
+,Instana,Green,Green,Amber,Amber,Amber$,Red,Green,Green,Green,Green,Red,Green,Jacob Yackenovich,Robert Uthe,
+,Concert,Green,Green,Green,Amber,Green,Red,Green,Green,Green,Green,Red,Green,Vikram Murali,Robert Uthe,
+,Kubecost,Green,Green,Green,Amber,Green$,Red,Red***,Q2 '26,N/A,Amber**,Red,Red,Eugene Khostov,Mark Schmidt,
+,Cloudability,Green,Green,Amber,Amber,Green$,Red,Green***,Q2 '26,N/A,Amber**,Red,Amber,Casey Doran,Mark Schmidt,
+,webMethods Hybrid Integration,Green,Green,Amber,Amber,Green,Red,Green,Green,Green,Green,Red,Apr 15,Suraj Kumar,Ashwini Kamath,
+,Vault,Green,Green,Amber,Red,Green$,Red,Red**,Amber*,Amber**,Amber**,Red,Red,Prakash Linga,Melina McClarty,
+,Verify,Green,Green,Red,Red,Red,Red,Green,Apr'26,Green,Green,Red,Amber,Patrick Wardrop,Farzana Sedillo,
+,NS1,Green,Green,Red,Red,Green$,Red,Green,Apr'26,Green,Green,Red,Red,Reggie Best,Clay Braxton,
+,Maximo,Green,Green,Red,Red,Red,Red,Green,Green,Green,Green,Red,Amber,Kendra DeKeyrel,Erin Buonomo,
+e-Comm,MaaS 360,,Green,Green,Amber,no data,Amber,,,Green,Q2 '26,Red,Amber,Alex Cherian,Kelly Fitzgerald,
+,Aspera,,Green,Red,Amber,no data,Red,,,Green,Green,Red,Apr 29,Rashmi Kaushik,Kelly Fitzgerald,
+,Cognos,,Green,Amber,Amber,no data,Red,,,Q2 '26,Q2 '26,Red,Red,Rachel Su,Kelly Fitzgerald,
+,SPSS,,Green,Green,Amber,N/A,Amber,,N/A - On prem,N/A - On prem,N/A - on prem,Red,Red,Chris Yu,Kelly Fitzgerald,
+,,,,,,,,,,,,,,,,
+,,,,,,,,Rated Usage dependencies on SAP and CIO*,,,,,,,,
+,,,,,,,,"Terraform, Vault, Cloudability, Kubecost - integration into IBM systems is WIP**",,,,,,,,
+,,,,,,,,"eCommerce = the ability to buy online, does not mean full self-service​",,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+🟢,Completed / YES,,,,,,,,,,,,,,,
+🟡,In Progress / Tgt Completion Date Added,,,,,,,,,,,,,,,
+🔴,Not Started or Incomplete / Tgt Completion Date Unknown / NO,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

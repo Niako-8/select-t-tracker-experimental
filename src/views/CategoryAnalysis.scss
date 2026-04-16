@@ -1,0 +1,99 @@
+.category-analysis {
+  padding: 2rem;
+  background: white;
+
+  .category-table {
+    width: 100%;
+
+    .category-row {
+      background-color: #f4f4f4;
+      
+      td {
+        padding: 0.75rem 1rem;
+      }
+
+      .category-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+
+        .category-icon {
+          font-size: 0.75rem;
+          color: #0f62fe;
+        }
+
+        .category-count {
+          color: #525252;
+          font-weight: normal;
+        }
+      }
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+
+      &.green {
+        background-color: #24a148;
+      }
+
+      &.amber {
+        background-color: #f1c21b;
+      }
+
+      &.red {
+        background-color: #da1e28;
+      }
+    }
+
+    .status-cell {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+
+      &.amber {
+        .status-text {
+          color: #525252;
+        }
+      }
+
+      &.pending {
+        color: #525252;
+        font-size: 0.75rem;
+      }
+
+      &.na {
+        color: #8d8d8d;
+      }
+    }
+
+    thead th {
+      background-color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #161616;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #e0e0e0;
+
+      &:hover {
+        background-color: #f4f4f4;
+      }
+
+      td {
+        padding: 1rem;
+        font-size: 0.875rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// Made with Bob

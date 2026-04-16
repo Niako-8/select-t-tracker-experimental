@@ -1,0 +1,119 @@
+.product-scorecard {
+  padding: 2rem;
+
+  .scorecard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .category-card {
+    padding: 1.5rem;
+    background: white;
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .category-name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #6929c4;
+        margin: 0;
+      }
+
+      .category-percentage {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #161616;
+      }
+    }
+
+    .progress-bar {
+      display: flex;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      background-color: #e0e0e0;
+
+      .progress-segment {
+        height: 100%;
+
+        &.green {
+          background-color: #24a148;
+        }
+
+        &.amber {
+          background-color: #f1c21b;
+        }
+
+        &.red {
+          background-color: #da1e28;
+        }
+
+        &.gray {
+          background-color: #a8a8a8;
+        }
+      }
+    }
+
+    .card-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .stat-indicator {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+
+          &.green {
+            background-color: #24a148;
+          }
+
+          &.amber {
+            background-color: #f1c21b;
+          }
+
+          &.red {
+            background-color: #da1e28;
+          }
+
+          &.gray {
+            background-color: #a8a8a8;
+          }
+        }
+
+        .stat-value {
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: #161616;
+        }
+      }
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #525252;
+      padding-top: 0.5rem;
+      border-top: 1px solid #e0e0e0;
+    }
+  }
+}
+
+// Made with Bob
