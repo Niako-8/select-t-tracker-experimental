@@ -189,17 +189,18 @@ function parseCsv(csvText) {
           (row[5] || '').trim() || null,
           (row[6] || '').trim() || null,
           (row[7] || '').trim() || null,
+          (row[8] || '').trim() || null,
         ],
         instrumented: [
-          (row[8] || '').trim() || null,
           (row[9] || '').trim() || null,
           (row[10] || '').trim() || null,
           (row[11] || '').trim() || null,
+          (row[12] || '').trim() || null,
         ],
-        platformEnabled: [(row[12] || '').trim() || null],
-        owner: (row[13] || '').trim(),
-        designFocal: (row[14] || '').trim(),
-        engineeringFocal: (row[15] || '').trim() || '',
+        platformEnabled: [(row[13] || '').trim() || null],
+        owner: (row[14] || '').trim(),
+        designFocal: (row[15] || '').trim(),
+        engineeringFocal: (row[16] || '').trim() || '',
       };
     });
 }
