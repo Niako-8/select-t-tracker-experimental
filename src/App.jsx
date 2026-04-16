@@ -173,6 +173,10 @@ function parseCsv(csvText) {
       const second = (row[1] || '').trim();
       if (!first && !second) return false;
       if (first === 'Green' || first === 'Amber' || first === 'Red') return false;
+      // Filter out legend rows
+      if (second.includes('Completed / YES') ||
+          second.includes('In Progress / Tgt Completion Date Added') ||
+          second.includes('Not Started or Incomplete')) return false;
       return second.length > 0;
     })
     .map((row) => {
