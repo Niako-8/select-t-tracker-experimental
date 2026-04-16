@@ -47,6 +47,45 @@
 
 .page-header p {
   margin: 0.35rem 0 0;
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: #f4f4f4;
+  padding: 0.25rem;
+  border-radius: 8px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #525252;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #e0e0e0;
+      color: #161616;
+    }
+
+    &.active {
+      background: white;
+      color: #0f62fe;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
   color: var(--text-secondary);
   font-size: 0.9rem;
 }

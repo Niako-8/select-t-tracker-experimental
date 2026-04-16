@@ -15,6 +15,8 @@ import {
   MinusCircle,
   TrendingUp,
   TrendingDown,
+  BarChart3,
+  GitCompare,
 } from 'lucide-react';
 import {
   ResponsiveContainer,
@@ -32,7 +34,9 @@ import {
 import Papa from 'papaparse';
 import { Toaster, toast } from 'sonner';
 import './App.scss';
+import './components/ChangesView.scss';
 import csvRawData from './imports/latest_data.csv?raw';
+import ChangesView from './components/ChangesView';
 
 const portfolios = ['Data', 'Automation', 'e-Comm'];
 const lastUpdated = 'Apr 16, 2026';
@@ -917,6 +921,7 @@ function App() {
   const [statusFilter, setStatusFilter] = useState('all');
   const [portfolioFilter, setPortfolioFilter] = useState('all');
   const [viewMode, setViewMode] = useState('product-scorecard');
+  const [activeView, setActiveView] = useState('dashboard'); // 'dashboard' or 'changes'
 
   const filteredData = useMemo(() => {
     let filtered = products;
@@ -1004,6 +1009,23 @@ function App() {
             <p>Portfolio product tracking with status indicators</p>
           </div>
 
+          <div className="view-toggle">
+            <button
+              className={activeView === 'dashboard' ? 'active' : ''}
+              onClick={() => setActiveView('dashboard')}
+            >
+              <BarChart3 size={18} />
+              Dashboard
+            </button>
+            <button
+              className={activeView === 'changes' ? 'active' : ''}
+              onClick={() => setActiveView('changes')}
+            >
+              <GitCompare size={18} />
+              Changes
+            </button>
+          </div>
+
           <div className="header-tools">
             <div className="search-shell">
               <Search size={18} />
@@ -1034,24 +1056,28 @@ function App() {
       </header>
 
       <main className="page-main">
-        <div className="view-switch">
-          {[
-            ['product-scorecard', 'Product Scorecard'],
-            ['category-analysis', 'Category Analysis'],
-            ['analytics', 'Analytics Dashboard'],
-          ].map(([key, label]) => (
-            <button
-              key={key}
-              type="button"
-              className={viewMode === key ? 'active' : ''}
-              onClick={() => setViewMode(key)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+        {activeView === 'changes' ? (
+          <ChangesView currentData={products} />
+        ) : (
+          <>
+            <div className="view-switch">
+              {[
+                ['product-scorecard', 'Product Scorecard'],
+                ['category-analysis', 'Category Analysis'],
+                ['analytics', 'Analytics Dashboard'],
+              ].map(([key, label]) => (
+                <button
+                  key={key}
+                  type="button"
+                  className={viewMode === key ? 'active' : ''}
+                  onClick={() => setViewMode(key)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
 
-        {viewMode === 'analytics' ? (
+            {viewMode === 'analytics' ? (
           <AnalyticsView products={filteredData} />
         ) : viewMode === 'category-analysis' ? (
           <>
@@ -1135,6 +1161,8 @@ function App() {
                 <p><span className="double-asterisk"><Asterisk size={12} /><Asterisk size={12} /></span><span><strong>Double Asterisk (**):</strong> Indicates amber status for Trial/Paid Journey CMTs with special conditions</span></p>
               </div>
             </div>
+          </>
+        )}
           </>
         )}
       </main>

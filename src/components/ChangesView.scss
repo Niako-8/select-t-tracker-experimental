@@ -1,0 +1,256 @@
+.changes-view {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .changes-header {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #161616;
+    }
+
+    .changes-subtitle {
+      color: #525252;
+      font-size: 0.875rem;
+    }
+  }
+
+  .changes-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .stat-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background: white;
+      border: 1px solid #e0e0e0;
+
+      svg {
+        flex-shrink: 0;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.875rem;
+        color: #525252;
+        margin-top: 0.25rem;
+      }
+
+      &.improvement {
+        border-left: 4px solid #24a148;
+        svg {
+          color: #24a148;
+        }
+        .stat-number {
+          color: #24a148;
+        }
+      }
+
+      &.regression {
+        border-left: 4px solid #da1e28;
+        svg {
+          color: #da1e28;
+        }
+        .stat-number {
+          color: #da1e28;
+        }
+      }
+
+      &.change {
+        border-left: 4px solid #0f62fe;
+        svg {
+          color: #0f62fe;
+        }
+        .stat-number {
+          color: #0f62fe;
+        }
+      }
+    }
+  }
+
+  .changes-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #e0e0e0;
+      background: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #f4f4f4;
+      }
+
+      &.active {
+        background: #0f62fe;
+        color: white;
+        border-color: #0f62fe;
+      }
+    }
+  }
+
+  .changes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .change-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      transition: all 0.2s;
+
+      &:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .change-icon {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+
+      &.improvement {
+        border-left: 4px solid #24a148;
+        .change-icon {
+          background: #defbe6;
+          color: #24a148;
+        }
+      }
+
+      &.regression {
+        border-left: 4px solid #da1e28;
+        .change-icon {
+          background: #fff1f1;
+          color: #da1e28;
+        }
+      }
+
+      &.new {
+        border-left: 4px solid #0f62fe;
+        .change-icon {
+          background: #e0e5ff;
+          color: #0f62fe;
+        }
+      }
+
+      &.removed {
+        border-left: 4px solid #8d8d8d;
+        .change-icon {
+          background: #f4f4f4;
+          color: #8d8d8d;
+        }
+      }
+
+      &.change {
+        border-left: 4px solid #f1c21b;
+        .change-icon {
+          background: #fcf4d6;
+          color: #8e6a00;
+        }
+      }
+
+      .change-content {
+        flex: 1;
+
+        .change-product {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+
+          .portfolio-badge {
+            display: inline-block;
+            padding: 0.125rem 0.5rem;
+            background: #e0e0e0;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #161616;
+          }
+
+          strong {
+            font-weight: 600;
+            color: #161616;
+          }
+        }
+
+        .change-message {
+          color: #525252;
+          font-size: 0.875rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .change-category {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          font-size: 0.8125rem;
+
+          .category-label {
+            padding: 0.125rem 0.5rem;
+            background: #f4f4f4;
+            border-radius: 4px;
+            font-weight: 500;
+            color: #525252;
+          }
+
+          .change-values {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            .from-value {
+              padding: 0.125rem 0.5rem;
+              background: #fff1f1;
+              border-radius: 4px;
+              color: #da1e28;
+              font-weight: 500;
+            }
+
+            .arrow {
+              color: #8d8d8d;
+            }
+
+            .to-value {
+              padding: 0.125rem 0.5rem;
+              background: #defbe6;
+              border-radius: 4px;
+              color: #24a148;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Made with Bob
